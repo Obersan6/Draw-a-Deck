@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const API_BASE = "https://deckofcardsapi.com/api/deck";
 
@@ -44,14 +44,14 @@ function CardDeck() {
   }
 
   return (
-    <div>
+    <div className="card-app">
       <button onClick={drawCard} disabled={!deck}>
         Draw Card
       </button>
       <button onClick={shuffleDeck} disabled={isShuffling}>
         {isShuffling ? "Shuffling..." : "Shuffle Deck"}
       </button>
-      <div>
+      <div className="card-container">
         {cards.map((card) => (
           <img key={card.code} src={card.image} alt={`${card.value} of ${card.suit}`} />
         ))}
